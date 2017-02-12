@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="620.0" prefWidth="1050.0" maxHeight="-Infinity"
+            maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/null"
+            fx:controller="lab.controller.controllers.MainViewController">
+    <children>
+        <GridPane fx:id="gridPane" alignment="CENTER" hgap="20" layoutX="7.0" layoutY="6.0" prefHeight="550.0"
+                  prefWidth="1000.0" vgap="15">
+            <children>
+
+                <Label fx:id="automatonLabel" alignment="CENTER" text="Automaton" GridPane.columnIndex="0"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="automatonChoiceBox" prefHeight="44.0" prefWidth="199.0" GridPane.columnIndex="1"
+                           GridPane.rowIndex="0">
+                </ChoiceBox>
+                <Label fx:id="Cols" alignment="CENTER" text="Cols" GridPane.columnIndex="0" GridPane.halignment="CENTER"
+                       GridPane.rowIndex="1">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="numberOfColsTextField" alignment="CENTER" prefHeight="35.0" prefWidth="199.0"
+                           text="80" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </TextField>
+
+
+                <Label fx:id="Rows" alignment="CENTER" text="Rows" GridPane.columnIndex="0" GridPane.halignment="CENTER"
+                       GridPane.rowIndex="2">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="numberOfRowsTextField" alignment="CENTER" prefHeight="35.0" prefWidth="199.0"
+                           text="60" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </TextField>
+
+                <Button fx:id="nextButton" mnemonicParsing="false" onAction="#changeView" prefHeight="39.0"
+                        prefWidth="199.0" text="Next" GridPane.columnIndex="1" GridPane.columnSpan="2"
+                        GridPane.rowIndex="3">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
+
+            </children>
+            <columnConstraints>
+                <ColumnConstraints/>
+                <ColumnConstraints/>
+                <ColumnConstraints/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints/>
+            </rowConstraints>
+        </GridPane>
+    </children>
+</AnchorPane>

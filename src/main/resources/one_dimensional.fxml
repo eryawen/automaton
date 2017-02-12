@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="620.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/null"
+            fx:controller="lab.controller.controllers.OneDimController">
+    <children>
+        <GridPane fx:id="gridPane" prefHeight="550.0" prefWidth="1000.0" hgap="20" vgap="20" alignment="CENTER_RIGHT">
+            <children>
+                <Canvas fx:id="board" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="0"
+                        GridPane.rowSpan="15" GridPane.valignment="CENTER"/>
+
+                <Label text="Rule" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2"/>
+                <TextField fx:id="rule1D" GridPane.columnIndex="1" GridPane.rowIndex="3" text="30" prefWidth="100.0"/>
+
+                <CheckBox fx:id="wrappingCheckBox" alignment="CENTER" contentDisplay="CENTER" text="Wrapping"
+                          selected="true" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <CheckBox fx:id="randomStateCheckBox" GridPane.halignment="LEFT" alignment="CENTER"
+                          contentDisplay="CENTER" selected="false" text="Random State" textAlignment="CENTER"
+                          GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+
+                <fx:define>
+                    <ToggleGroup fx:id="gameButtons"/>
+                </fx:define>
+                <ToggleButton fx:id="startNewSimulationButton" mnemonicParsing="false" text="Start new simulation"
+                              GridPane.columnIndex="1" onAction="#startNewSimulation" prefWidth="120.0"
+                              GridPane.rowIndex="6" GridPane.halignment="LEFT" toggleGroup="$gameButtons"/>
+                <ToggleButton fx:id="pauseButton" mnemonicParsing="false" text="Pause" minWidth="70"
+                              GridPane.columnIndex="1" prefWidth="120.0"
+                              GridPane.rowIndex="7" GridPane.halignment="LEFT" toggleGroup="$gameButtons"
+                              disable="true" onAction="#pauseButtonPressed"/>
+                <ToggleButton fx:id="continueButton" mnemonicParsing="false" text="Continue"
+                              onAction="#continueButtonPressed" prefWidth="120.0"
+                              GridPane.columnIndex="1" disable="true"
+                              GridPane.rowIndex="8" GridPane.halignment="LEFT" toggleGroup="$gameButtons"/>
+                <ToggleButton fx:id="clearButton" mnemonicParsing="false" text="Clear" GridPane.columnIndex="1"
+                              minWidth="120" onAction="#clearButtonPressed" prefWidth="120.0"
+                              GridPane.rowIndex="9" GridPane.halignment="LEFT" toggleGroup="$gameButtons"/>
+
+                <Button fx:id="backButton" minWidth="70" GridPane.halignment="LEFT" mnemonicParsing="false"
+                        onAction="#backButtonPressed" prefHeight="25.0" prefWidth="120.0" text="Back"
+                        GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+
+
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>
+

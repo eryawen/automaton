@@ -1,0 +1,63 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+apply plugin: "jacoco"
+
+
+mainClassName = 'lab.Main'
+
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.14.8'
+    compile group: 'org.jacoco', name: 'jacoco-maven-plugin', version: '0.7.7.201606060606'
+    compile group: 'commons-lang', name: 'commons-lang', version: '2.3'
+    testCompile 'junit:junit:4.12'
+}
+
+
+    task fatJar(type: Jar) {
+        manifest {
+            attributes 'Main-Class': 'lab.Main'
+
+        }
+        baseName = project.name + '-all'
+        from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+        with jar
+    }
+
+    jacoco {
+        toolVersion = "0.7.1.201405082137"
+        reportsDir = file("$buildDir/customJacocoReportDir")
+    }
+
+
+    test {
+        jacoco {
+            append = false
+            destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+            classDumpFile = file("$buildDir/jacoco/classpathdumps")
+        }
+
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.enabled false
+            csv.enabled false
+            html.destination "${buildDir}/jacocoHtml"
+        }
+    }
+
+
+
+    task myJavadocs(type: Javadoc) {
+        source = sourceSets.main.allJava
+    }
+
+

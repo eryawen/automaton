@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="620.0"
+            prefWidth="1050.0" xmlns="http://javafx.com/javafx/null"
+            fx:controller="lab.controller.controllers.WireworldController">
+    <children>
+        <BorderPane minHeight="580.0" minWidth="1000.0">
+
+            <center>
+
+                <Canvas fx:id="board">
+                    <BorderPane.margin>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
+                    </BorderPane.margin>
+                </Canvas>
+            </center>
+            <right>
+                <GridPane fx:id="gridPane" hgap="30"
+
+                          vgap="10">
+                    <children>
+
+                        <Label fx:id="neighborhoodLabel" alignment="CENTER" text="Neighborhood" GridPane.columnIndex="1"
+                               GridPane.halignment="LEFT" GridPane.rowIndex="5"/>
+                        <ChoiceBox fx:id="neighbourhood2DChoiceBox" GridPane.columnIndex="1" GridPane.halignment="LEFT"
+                                   GridPane.rowIndex="6" maxWidth="100"/>
+
+
+                        <Label fx:id="radiusLabel" alignment="CENTER_LEFT" text="Radius" GridPane.columnIndex="1"
+                               GridPane.halignment="LEFT" GridPane.rowIndex="7" maxWidth="70"/>
+                        <TextField fx:id="radiusTextField" alignment="CENTER" GridPane.halignment="LEFT"
+                                   prefHeight="7.0"
+                                   prefWidth="67.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="8"
+                                   maxWidth="70"/>
+
+                        <CheckBox fx:id="wrappingCheckBox" GridPane.halignment="LEFT" alignment="CENTER"
+                                  contentDisplay="CENTER" selected="true" text="Wrapping" textAlignment="CENTER"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+                        <CheckBox fx:id="randomStateCheckBox" GridPane.halignment="LEFT" alignment="CENTER"
+                                  contentDisplay="CENTER" selected="false" text="Random State" textAlignment="CENTER"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+
+
+                        <Label fx:id="structureLabel" alignment="CENTER" text="Choose structure to add"
+                               GridPane.columnIndex="1"
+                               GridPane.halignment="LEFT" GridPane.rowIndex="11"/>
+
+
+                        <ChoiceBox fx:id="wireworldStructureChoiceBox" prefWidth="125.0" visible="true"
+                                   GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="12"/>
+
+
+                        <Button fx:id="backButton" minWidth="70" GridPane.halignment="LEFT" mnemonicParsing="false"
+                                onAction="#backButtonPressed" prefHeight="30.0" prefWidth="125.0" text="Back"
+                                GridPane.columnIndex="1" GridPane.rowIndex="17"/>
+
+                        <fx:define>
+                            <ToggleGroup fx:id="gameButtons"/>
+                        </fx:define>
+                        <ToggleButton fx:id="startNewSimulationButton" mnemonicParsing="false"
+                                      text="Start new simulation"
+                                      GridPane.columnIndex="1" onAction="#startNewSimulation" prefWidth="125.0"
+                                      GridPane.rowIndex="13" GridPane.halignment="LEFT" toggleGroup="$gameButtons"/>
+                        <ToggleButton fx:id="clearButton" mnemonicParsing="false" text="Clear" GridPane.columnIndex="1"
+                                      minWidth="125" onAction="#clearButtonPressed" prefWidth="125.0"
+                                      GridPane.rowIndex="16" GridPane.halignment="LEFT" toggleGroup="$gameButtons"/>
+
+                        <ToggleButton fx:id="pauseButton" mnemonicParsing="false" text="Pause" minWidth="70"
+                                      GridPane.columnIndex="1"
+                                      GridPane.rowIndex="14" GridPane.halignment="LEFT" prefWidth="125.0"
+                                      toggleGroup="$gameButtons"
+                                      disable="true" onAction="#pauseButtonPressed"/>
+                        <ToggleButton fx:id="continueButton" mnemonicParsing="false" text="Continue"
+                                      onAction="#continueButtonPressed" prefWidth="125.0"
+                                      GridPane.columnIndex="1" disable="true"
+                                      GridPane.rowIndex="15" GridPane.halignment="LEFT" toggleGroup="$gameButtons"/>
+
+
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                    </rowConstraints>
+                </GridPane>
+            </right>
+        </BorderPane>
+
+    </children>
+</AnchorPane>
