@@ -18,7 +18,7 @@ public enum GameOfLifeStructure implements Structure {
 	public HashMap<Coords2D, CellOnBoard> getStructure(int row, int col) {
 		HashMap<Coords2D, CellOnBoard> map = new HashMap<>();
 		String structure = "";
-		File file = new File("src\\main\\resources\\structures\\" + this + ".txt");
+		File file = new File(System.getProperty("user.dir") + "/src/main/resources/structures/" + this + ".txt");
 		try {
 			Scanner scanner = new Scanner(file);
 			while (scanner.hasNextLine()) {
